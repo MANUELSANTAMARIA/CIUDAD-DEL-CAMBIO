@@ -1,0 +1,390 @@
+/* cabecera */
+.content-wrapper {
+    /* Estilos de diseño del content-wrapper */
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    
+  }
+  
+.content-header {
+    background-color: white;
+    padding: 10px;
+}
+
+.content-header .titulo{
+  color:black ;
+}
+
+.personal-info {
+  border: 1px solid #ccc;
+  width: 350px;
+  padding: 20px;
+  border-radius: 5px;
+  
+}
+
+.personal-info h2 {
+  margin-bottom: 10px;
+  color:#0b7300
+}
+
+.personal-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.personal-info ul li {
+  margin-bottom: 10px;
+}
+
+.personal-info ul li strong {
+  font-weight: bold;
+}
+
+
+.btn-cambio-contraseña {
+  background-color: #0b7300; /* Color de fondo */
+  border: none; /* Sin borde */
+  color: white; /* Color de texto */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center; /* Alineación de texto */
+  text-decoration: none; /* Sin decoración de texto */
+  display: inline-block; /* Mostrar como bloque en línea */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 10px; /* Radio de borde */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+.btn-cambio-contraseña:hover{
+  background-color: #1783db;
+}
+
+
+/* crear modal el modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5);
+
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; 
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* formularios input y buton dentro del modal cambio de contraseña */
+.formulario{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario input{
+  margin-bottom: 10px;
+  width: 300px;
+  padding: 10px;
+} 
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* poner un icono dentro de un boton */
+/* formulario */
+
+.titulo-modal{
+  display: block;
+  background-color: #1783db;
+  border-radius: 5px;
+  width: 90%;
+  height: 50px;
+  color: white;
+  margin-left: 25px;
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /*Centrar horizontalmente*/
+}
+.form{
+  width: 100%;
+  height: 50px;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 10px;
+  /* cambia la posición del elemento en relación con el elemento principal  */
+  position: relative;
+  overflow: hidden;    
+  
+}
+
+
+.form input{
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: black;
+  padding-top: 12px;
+  border: none;
+  outline: 0px;
+}
+
+
+.form .lbl{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #1783db;
+}
+
+
+
+.form .lbl:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #0b7300;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+
+.text-span{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+
+.form input:focus + .lbl .text-span,.form input:valid + .lbl .text-span{
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #0b7300;
+}
+
+
+.form input:focus + .lbl:after, .form input:valid + .lbl:after{
+  transform: translateX(0%);
+} 
+
+
+
+/* botones */
+.button-container {
+  margin-top: 40px;
+  text-align: center;
+  /* background-color: #0b7300; */
+  width: 300px;
+}
+
+.inline-button {
+  background-color: #1783db;
+  border: none; /* Sin borde */
+  color: white; /* Color de texto */
+  padding: 10px 30px; /* Espaciado interno */
+  text-align: center; /* Alineación de texto */
+  text-decoration: none; /* Sin decoración de texto */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 5px; /* Radio de borde */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+
+
+.inline-button:hover {
+  background-color: #0b7300; /* Color de fondo */
+
+}
+
+
+
+/* buscar usu */
+.buscar-usu {
+  width: 100%;
+  height: 50px;
+  max-width: 1000px;
+  margin-top: 10px;
+  /* cambia la posición del elemento en relación con el elemento principal  */
+  position: relative;
+  overflow: hidden
+}
+
+.buscar-usu input{
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: black;
+  padding-top: 12px;
+  border: none;
+  outline: 0px;
+}
+
+.buscar-usu .lbl{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  /* e utiliza para controlar cómo un elemento responde a los eventos del puntero */
+  pointer-events: none;
+  border-bottom: 1px solid #1783db;
+} 
+
+.buscar-usu .lbl:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid #0b7300;
+  transform: translateX(-100%);
+  transition: all 0.3s ease;
+}
+
+.text-span{
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+  color: black;
+}
+
+/* valido si esta focus:encuentra en estado de "enfoque" o cuando el usuario interactúa
+ valid:otros elementos interactivos que contengan datos válidos según las restricciones definidas  */
+.buscar-usu input:focus + .lbl .text-span,
+.buscar-usu input:valid + .lbl .text-span{
+  transform: translateY(-150%);
+  font-size: 15px;
+  color: #0b7300; 
+}
+
+.buscar-usu input:focus + .lbl:after, .lbl:after{
+  transform: translateX(0%);
+} 
+
+.combodesplegable{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.combodesplegable .select {
+  width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  
+  
+}
+
+.combodesplegable .select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #999999;
+  color: #0b7300;
+}
+
+.select option[selected] {
+  color:#1783db;
+}
+
+
+.stylo-alerta-confirmacion{
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.stylo-alerta-rechazo{
+  background-color: #FFD9D9;
+  border-color: #c3e6cb;
+  color: #8B0000;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+/* card*/
+.contenedor-card{
+  display: flex;
+  /* en un contenedor flexible, los elementos flexibles se envolverán en una nueva línea si no tienen 
+  suficiente espacio horizontal en la línea actual */
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.card {
+  position: relative;
+  width:  30%;
+  height: 250px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border: 1px solid #ddd; /* Grosor y color del borde */
+  border-radius: 6px; /* Redondear las esquinas */
+  padding: 10px; /* Espacio interno del contenido de la card */
+  align-items: center;
+}
+
+.card-footer{
+  margin-top: 5px;
+}
+
+.inline-button-eliminar {
+  background-color: #1783db;
+  border: none; /* Sin borde */
+  color: white; /* Color de texto */
+  padding: 10px 30px; /* Espaciado interno */
+  text-align: center; /* Alineación de texto */
+  text-decoration: none; /* Sin decoración de texto */
+  font-size: 16px; /* Tamaño de fuente */
+  border-radius: 5px; /* Radio de borde */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
+
+
+.inline-button-eliminar:hover {
+  background-color: red; /* Color de fondo */
+
+}
+
+
+/* hacer lo  responsive */
+@media (max-width: 768px) {
+  /* Cambios de estilo para pantallas más pequeñas */
+  .modal-content {
+    width: 90%; 
+    margin: 20% auto; /* Ajusta el margen superior para centrar el modal en pantallas más pequeñas */
+  }
+}
